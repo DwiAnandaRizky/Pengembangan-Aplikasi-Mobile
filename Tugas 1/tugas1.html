@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tugas 1 Adli Mustofa - 120140022</title>
+        <style type=text/css> 
+        body{
+            width: 280px;
+            height: 653px;
+        }
+        th{
+            background-color:mediumblue;
+            color: ghostwhite;
+        }
+        </style>
+    </head>
+    <body>
+        <table border="1" width="400px" style="border: 1px solid">
+                <tr>
+                    <th width="20">No</th>
+                    <th width="80">Nama</th>
+                    <th width="50">NIM</th>
+                    <th width="50">Nilai</th>
+                    <th width="80">Huruf Mutu</th>
+                </tr>
+        </table>
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function () {
+            var mhs = [{
+                    "Name":"Boy",
+                    "NIM":123,
+                    "Nilai":60
+                },
+                {
+                    "Name":"Aldi",
+                    "NIM":124,
+                    "Nilai":70
+                },
+                {
+                    "Name":"Ade",
+                    "NIM":125,
+                    "Nilai":40
+                },
+                {
+                    "Name":"Andre",
+                    "NIM":127,
+                    "Nilai":65
+                },
+                {
+                    "Name":"Ahmad",
+                    "NIM":121,
+                    "Nilai":80
+                },
+                {
+                    "Name":"Boby",
+                    "NIM":122,
+                    "Nilai":30
+                },
+                {
+                    "Name":"Bima",
+                    "NIM":128,
+                    "Nilai":90
+                },
+                {
+                    "Name":"Chris",
+                    "NIM":129,
+                    "Nilai":70
+                },
+                {
+                    "Name":"Rendi",
+                    "NIM":130,
+                    "Nilai":20
+                },
+                {
+                    "Name":"Randy",
+                    "NIM":126,
+                    "Nilai":90
+                }];
+            var data;
+            var NilaiMutu;
+            for (var i = 0; i < mhs.length; i++) {
+                data = $('<tr/>');
+                data.append('<td>' + (i+1) + "</td>");
+                data.append('<td>' + mhs[i].Name + "</td>");
+                data.append('<td>' + mhs[i].NIM + "</td>");
+                data.append('<td>' + mhs[i].Nilai + "</td>");
+                if(mhs[i].Nilai>=80){
+                    mutu = "A";
+                }else if(mhs[i].Nilai>=70){
+                    mutu = "AB";
+                }else if(mhs[i].Nilai>=60){
+                    mutu = "BC";
+                }else if(mhs[i].Nilai>=50){
+                    mutu = "C";
+                }else if(mhs[i].Nilai>=40){
+                    mutu = "CD";
+                }else if(mhs[i].Nilai>=10){
+                    mutu = "D";
+                }else if(mhs[i].Nilai<10){
+                    mutu = "E";
+                }else{
+                    mutu = null;
+                }
+                data.append('<td>' + mutu + "</td>");
+                $('table').first().append(data);
+                }  
+            });
+        </script>
+    </body>
+</html>
